@@ -1,0 +1,589 @@
+/* Temno-zlata tema */
+:root {
+    --gold: #FFD700;
+    --dark-gold: #D4AF37;
+    --dark: #121212;
+    --darker: #0A0A0A;
+    --gray: #1E1E1E;
+    --light-gray: #2D2D2D;
+    --text: #FFFFFF;
+    --text-secondary: #B0B0B0;
+}
+
+/* Osnovni slogi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-right: 12px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Navigacija */
+nav {
+    background-color: rgba(10, 10, 10, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 28px;
+    height: 3px;
+    background-color: var(--text);
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hero sekcija */
+.hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%), url('public/images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: var(--gold);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateY(-10deg);
+    border: 2px solid var(--gold);
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Funkcije */
+.features {
+    background-color: var(--darker);
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.features .container {
+    position: relative;
+    z-index: 1;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 80px;
+    color: var(--gold);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card .icon {
+    font-size: 54px;
+    margin-bottom: 25px;
+    color: var(--gold);
+}
+
+.feature-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Tehnologija */
+.technology {
+    background: linear-gradient(to bottom, var(--darker) 0%, var(--dark) 100%);
+}
+
+.technology .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.tech-content {
+    flex: 1;
+}
+
+.tech-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: var(--gold);
+}
+
+.tech-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tech-item {
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 4px solid var(--gold);
+}
+
+.tech-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+.tech-item p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.tech-image {
+    flex: 1;
+    text-align: center;
+}
+
+.tech-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Prenos */
+.download {
+    background-color: var(--darker);
+    text-align: center;
+    padding: 120px 0;
+}
+
+.download h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.download p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--gray);
+    padding: 20px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.download-btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--light-gray);
+    border-color: var(--gold);
+}
+
+.download-btn img {
+    width: 36px;
+    height: 36px;
+    margin-right: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--darker);
+    padding: 80px 0 30px;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.footer-logo span {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.link-group {
+    min-width: 180px;
+}
+
+.link-group h4 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--gold);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.link-group h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+.link-group a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.link-group a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Animacije */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 60px;
+    }
+    
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .technology .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-buttons {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+    
+    .features h2,
+    .download h2,
+    .tech-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
